@@ -5,17 +5,17 @@ from dash.dependencies import Input, Output, State
 
 # List of Bingo items
 bingo_items = ['talk about v6, v7, v18', 'Smoothie', 'ALIENS', 
-               'my last question is...', 'Copyright', 'MidJourney Movies, when?', 
+               'my last question is...', 'Copyright', 'Midjourney Movies, when?', 
                ' "100x better" ',  'someone asking for a job',  'connection problems', 
                'discord breaking', 'in/outpainting', 'flowers and bees',  
-               '"why no NSFW"', '"why word X banned?"', 'How did u make MidJourney?', 
+               '"why no NSFW"', '"why word X banned?"', 'How did u make Midjourney, exactly?', 
                'cats per seconds',  '"stable characters, when?"', 'post-scarcity talk', 
                'long ADHD ramble', 'API!?!',  'vehicle for imagination',  
-               'ancient Chinese philosophy', 'Dream Game Engine', 'Free tier', 
+               'Ancient Chinese Philosophy', 'Dream Game Engine', 'Free tier', 
                '"Can you hear me?"', 'Shout Out', 'Self Promotion', 'AI Bias', 
                '3D, when?', '"not commercial"', '100K/month guy',  'liquid imagination', 
                'the three pillars', '*pet noises*', 'more visual exploration in the next 10 years', 
-               '1% bad actors is still a lot', 'smol training data', 'Rating should not be like social media']
+               '1% bad actors is still a lot', 'smol training data', 'MJ should not be like social media']
 
 # Initialize the app
 app = dash.Dash(__name__)
@@ -25,7 +25,7 @@ server = app.server
 
 # Define the layout of the app
 app.layout = html.Div([
-    html.H1('MidJourney Office Hours Bingo', style={'font-size': '36px'}),
+    html.H1('Midjourney Office Hours Bingo', style={'font-size': '36px'}),
     html.Div(id='bingo-message', style={'font-size': '24px', 'color': 'red'}),
     html.Button('Randomize Board', id='button-randomize', style={'font-size': '24px', 'background-color': 'white', 'color': 'black'}),
     html.Table([
