@@ -1,7 +1,7 @@
 # oh-bingo-board
-MidJourney Office Hours Bingo 
+Midjourney Office Hours Bingo 
 
-MidJourney Office Hours Bingo is a small interactive web app designed to play Bingo during the weekly MidJourney office hours. The bingo board is generated with a set of predefined items that I collected with the help of the community. Users can click on the cells to mark them, and when a bingo is achieved, a "BINGO!" message will appear.
+Midjourney Office Hours Bingo is a small interactive web app designed to play Bingo during the weekly Midjourney office hours. The bingo board is generated with a set of predefined items that I collected with the help of the community. Users can click on the cells to mark them, and when a bingo is achieved, a "BINGO!" message will appear.
 
 ## Features
 
