@@ -25,17 +25,22 @@ server = app.server
 
 # Define the layout of the app
 app.layout = html.Div([
-    html.H1('Midjourney Office Hours Bingo', style={'font-size': '36px'}),
-    html.Div(id='bingo-message', style={'font-size': '24px', 'color': 'red'}),
-    html.Button('Randomize Board', id='button-randomize', style={'font-size': '24px', 'background-color': 'white', 'color': 'black'}),
+    html.H1('Midjourney Office Hours Bingo', style={'font-size': '36px', 'color':'white'}),
+    html.Div(id='bingo-message', style={'font-size': '24px', 'color': '#47958A', 'font-style': 'bold'}),
+    html.Button('Randomize Board', id='button-randomize', style={
+        'font-size': '24px', 
+        'background-color': '#1F1E4D', 
+        'color': 'white'
+        }),
     html.Table([
         html.Tr([
             html.Td(html.Div(item), id=f'cell-{i}-{j}', style={
+                'color':'white',
                 'border': '1px solid black',
                 'height': '120px',
                 'width': '120px',
                 'text-align': 'center',
-                'background-color': 'white',
+                'background-color': '#010612',
                 'font-size': '20px',
                 'font-family': 'Arial'
             }, n_clicks=0)
@@ -43,7 +48,7 @@ app.layout = html.Div([
         ])
         for i in range(5)
     ]),
-    html.Div('Created by Tina Tiresome with much help from ChatGTP and #vc-chat', style={'font-size': '14px', 'font-style': 'italic'})
+    html.Div('Created by Tina Tiresome with much help from ChatGTP and #vc-chat', style={'font-size': '14px', 'font-style': 'italic', 'color':'white'})
 ])
 
 
@@ -63,12 +68,12 @@ def get_styles(n_clicks, randomize_clicks, style):
 
     # Reset the background color when the button is clicked
     if triggered_input == 'button-randomize':
-        style['background-color'] = 'white'
-    # Change the background color to a shade of green when the cell is clicked
+        style['background-color'] = '#010612'
+    # Change the background color to a nice color when the cell is clicked
     elif n_clicks % 2 == 1:
-        style['background-color'] = '#1fb622'
+        style['background-color'] = '#75014B'
     else:
-        style['background-color'] = 'white'
+        style['background-color'] = '#010612'
     return style
 
 def check_bingo(matrix):
@@ -126,14 +131,14 @@ def handle_clicks(*args):
     # Update styles and n_clicks based on the triggered input
     for idx, (clicks, style) in enumerate(zip(cell_clicks, cell_styles)):
         if triggered_input == f"cell-{idx // 5}-{idx % 5}":
-            if style["background-color"] == "white":
-                style["background-color"] = "#1fb622"
+            if style["background-color"] == "#010612":
+                style["background-color"] = "#75014B" #nice color
                 output_n_clicks.append(1)
             else:
-                style["background-color"] = "white"
+                style["background-color"] = "#010612"
                 output_n_clicks.append(0)
         elif triggered_input == "button-randomize":
-            style["background-color"] = "white"
+            style["background-color"] = "#010612"
             output_n_clicks.append(0)
         else:
             output_n_clicks.append(clicks)
@@ -143,9 +148,9 @@ def handle_clicks(*args):
     clicks_matrix = [output_n_clicks[i * 5: (i + 1) * 5] for i in range(5)]
     for i in range(5):
         for j in range(5):
-            clicks_matrix[i][j] = 1 if cell_styles[i * 5 + j]["background-color"] == "#1fb622" else 0
+            clicks_matrix[i][j] = 1 if cell_styles[i * 5 + j]["background-color"] == "#75014B" else 0
 
-    bingo_message = "BINGO!" if check_bingo(clicks_matrix) else ""
+    bingo_message = "BINGO! BINGO! BINGO! BINGO! BINGO!" if check_bingo(clicks_matrix) else ""
 
     if triggered_input == "button-randomize":
         bingo_message = ""
