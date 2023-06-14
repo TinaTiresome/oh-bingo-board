@@ -15,7 +15,8 @@ bingo_items = ['talk about v6, v7, v18', 'Smoothie', 'ALIENS',
                '"Can you hear me?"', 'Shout Out', 'Self Promotion', 'AI Bias', 
                '3D, when?', '"not commercial"', '100K/month guy',  'liquid imagination', 
                'the three pillars', '*pet noises*', 'more visual exploration in the next 10 years', 
-               '1% bad actors is still a lot', 'smol training data', 'MJ should not be like social media']
+               '1% bad actors is still a lot', 'smol training data', 'MJ should not be like social media', 
+               '*David giggles*', 'cat bois']
 
 # Initialize the app
 app = dash.Dash(__name__)
