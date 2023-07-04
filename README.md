@@ -18,7 +18,7 @@ Midjourney Office Hours Bingo is a small interactive web app designed to play Bi
 
 ## Contributing
 
-If you'd like to contribute, feel free to reach out to me on Discord! TinaTiresome#9069
+pls do
 
 ## License
 
